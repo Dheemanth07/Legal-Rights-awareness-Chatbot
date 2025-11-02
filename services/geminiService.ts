@@ -79,3 +79,25 @@ export async function generateSpeechFromText(text: string): Promise<string | nul
         return null;
     }
 }
+
+export async function getJurisdictionFromCoords(lat: number, lon: number): Promise<string | null> {
+    try {
+        const prompt = `Based on the following coordinates, what is the state/province and country? Please provide only the name of the state or province, followed by the country. For example: "California, USA". Latitude: ${lat}, Longitude: ${lon}.`;
+        
+        const response = await ai.models.generateContent({
+            model: 'gemini-2.5-flash',
+            contents: prompt
+        });
+
+        const text = response.text.trim();
+        // A simple check to see if the response is in an expected format
+        if (text && text.includes(',')) {
+            return text;
+        }
+        console.warn("Unexpected format from jurisdiction lookup:", text);
+        return null;
+    } catch (error) {
+        console.error("Error getting jurisdiction from coordinates:", error);
+        return null;
+    }
+}

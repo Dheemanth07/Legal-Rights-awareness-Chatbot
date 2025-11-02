@@ -132,8 +132,14 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, setMessages, jurisdic
           setIsLoading(false);
         } catch (e) {
           console.error("Gemini API Error:", e);
-          const errorMessage = e instanceof Error ? e.message : 'An unknown error occurred.';
-          const userFriendlyMessage = `Sorry, something went wrong. Details: ${errorMessage}`;
+          let userFriendlyMessage = 'Sorry, something went wrong. Please try again later.';
+          if (e instanceof Error) {
+            if (e.message.toLowerCase().includes('fetch')) { // Likely a network error
+              userFriendlyMessage = 'A network error occurred. Please check your internet connection and try again.';
+            } else {
+              userFriendlyMessage = `An unexpected error occurred. Please try again.`;
+            }
+          }
 
           const handleRetry = () => {
             setMessages(prev => prev.map(msg =>
