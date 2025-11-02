@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { marked } from 'marked';
 import type { ChatMessage } from '../types';
@@ -21,10 +20,10 @@ interface MessageProps {
 }
 
 const LoadingIndicator: React.FC = () => (
-  <div className="flex items-center space-x-1">
-    <span className="w-1.5 h-1.5 bg-current rounded-full animate-pulse"></span>
-    <span className="w-1.5 h-1.5 bg-current rounded-full animate-pulse delay-150"></span>
-    <span className="w-1.5 h-1.5 bg-current rounded-full animate-pulse delay-300"></span>
+  <div className="flex items-end space-x-1 h-5">
+    <div className="w-1.5 h-1.5 bg-current rounded-full animate-[pulse_1s_ease-in-out_infinite]"></div>
+    <div className="w-1.5 h-2.5 bg-current rounded-full animate-[pulse_1s_ease-in-out_infinite_0.2s]"></div>
+    <div className="w-1.5 h-3.5 bg-current rounded-full animate-[pulse_1s_ease-in-out_infinite_0.4s]"></div>
   </div>
 );
 
@@ -192,12 +191,13 @@ const Message: React.FC<MessageProps> = ({ message, onFeedback, onSuggestionClic
             )}
         </div>
         {isBot && !message.isLoading && !message.isError && message.suggestions && message.suggestions.length > 0 && (
-            <div className="flex flex-wrap justify-start gap-2 mt-3 animate-fade-in">
+            <div className="flex flex-wrap justify-start gap-2 mt-3">
                 {message.suggestions.map((suggestion, index) => (
                     <button
                         key={index}
                         onClick={() => onSuggestionClick?.(suggestion)}
-                        className="px-4 py-2 bg-gray-700/50 text-blue-300 rounded-full text-sm hover:bg-gray-700 transition-colors"
+                        className="px-4 py-2 bg-gray-700/50 text-blue-300 rounded-full text-sm hover:bg-gray-700 transition-colors animate-stagger-in"
+                        style={{ animationDelay: `${index * 100}ms` }}
                     >
                         {suggestion}
                     </button>

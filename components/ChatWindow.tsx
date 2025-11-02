@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import type { GenerateContentResponse, Content, Part, GroundingChunk } from '@google/genai';
 import { sendMessageToGeminiStream } from '../services/geminiService';
@@ -176,12 +175,13 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, setMessages, jurisdic
           <Message key={msg.id} message={msg} onFeedback={handleFeedback} onSuggestionClick={handleSuggestionClick} />
         ))}
         {showSuggestions && (
-          <div className="flex flex-wrap justify-start gap-2 ml-12 animate-in">
-            {suggestionChips.map((chip) => (
+          <div className="flex flex-wrap justify-start gap-2 ml-12">
+            {suggestionChips.map((chip, index) => (
               <button
                 key={chip}
                 onClick={() => handleSuggestionClick(chip)}
-                className="px-4 py-2 bg-gray-700/50 text-blue-300 rounded-full text-sm hover:bg-gray-700 transition-colors"
+                className="px-4 py-2 bg-gray-700/50 text-blue-300 rounded-full text-sm hover:bg-gray-700 transition-colors animate-stagger-in"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 {chip}
               </button>

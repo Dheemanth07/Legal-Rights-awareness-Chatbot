@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import ChatWindow from './components/ChatWindow';
 import DisclaimerModal from './components/DisclaimerModal';
@@ -116,12 +115,12 @@ const App: React.FC = () => {
   return (
     <>
       <DisclaimerModal isOpen={isDisclaimerOpen} onClose={handleAcknowledgeDisclaimer} />
-      <div className="flex flex-col h-screen bg-gray-950 text-white font-sans">
+      <div className="flex flex-col h-screen bg-transparent text-white font-sans">
         <header className="bg-gray-900/60 backdrop-blur-sm p-4 border-b border-gray-700/50 shadow-lg">
           <div className="max-w-4xl mx-auto flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-3">
               <ScaleIcon className="w-7 h-7 text-blue-400" />
-              <h1 className="text-xl md:text-2xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">
+              <h1 className="text-xl md:text-2xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300 bg-[length:200%_auto] animate-text-pan">
                 Legal Rights Chatbot
               </h1>
             </div>

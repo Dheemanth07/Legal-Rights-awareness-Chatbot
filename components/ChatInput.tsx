@@ -177,7 +177,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
             disabled={isLoading}
             aria-label="Attach file"
             title="Attach file"
-            className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full text-white bg-gray-600 transition-colors duration-200 disabled:bg-gray-600 disabled:cursor-not-allowed hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500"
+            className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full text-white bg-gray-600 transition-all duration-200 disabled:bg-gray-600 disabled:cursor-not-allowed hover:bg-gray-700 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500"
         >
             <PaperclipIcon className="w-5 h-5" />
         </button>
@@ -218,7 +218,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
                   disabled={isLoading}
                   aria-label={isListening ? 'Stop listening' : 'Start listening'}
                   title={isListening ? 'Stop recording' : 'Record your question'}
-                  className={`w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full text-white transition-colors duration-200 disabled:bg-gray-600 disabled:cursor-not-allowed hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500 ${isListening ? 'bg-red-600 hover:bg-red-500' : 'bg-gray-600'}`}
+                  className={`w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full text-white transition-all duration-200 disabled:bg-gray-600 disabled:cursor-not-allowed hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500 ${isListening ? 'bg-red-600 hover:bg-red-500' : 'bg-gray-600'}`}
                 >
                   <MicrophoneIcon className="w-5 h-5" />
                 </button>
@@ -227,7 +227,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, isLoading }) => {
                   disabled={isLoading || (!text.trim() && !image)}
                   aria-label="Send message"
                   title="Send message"
-                  className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-blue-600 rounded-full text-white transition-colors duration-200 disabled:bg-gray-600 disabled:cursor-not-allowed hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500"
+                  className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-blue-600 rounded-full text-white transition-all duration-200 disabled:bg-gray-600 disabled:cursor-not-allowed hover:bg-blue-500 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500"
                 >
                   {isLoading ? (
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

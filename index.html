@@ -26,10 +26,26 @@
                 '0%': { opacity: 0 },
                 '100%': { opacity: 1 },
               },
+              'background-pan': {
+                '0%': { background-position: '0% 50%' },
+                '50%': { background-position: '100% 50%' },
+                '100%': { background-position: '0% 50%' },
+              },
+              'text-pan': {
+                '0%': { background-position: '0%' },
+                '100%': { background-position: '200%' },
+              },
+              'stagger-in': {
+                '0%': { transform: 'translateY(8px)', opacity: 0 },
+                '100%': { transform: 'translateY(0)', opacity: 1 },
+              },
             },
             animation: {
               in: 'in .6s both',
               'fade-in': 'fade-in .3s ease-out',
+              'background-pan': 'background-pan 15s ease infinite',
+              'text-pan': 'text-pan 3s linear infinite',
+              'stagger-in': 'stagger-in .4s ease-out both',
             },
           },
         },
@@ -47,7 +63,7 @@
 }
 </script>
 </head>
-  <body class="bg-gray-950">
+  <body class="bg-gradient-to-br from-gray-950 via-gray-900 to-blue-950/40 bg-[length:200%_200%] animate-background-pan">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
