@@ -1,49 +1,20 @@
-# Legal Rights Awareness Chatbot
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-### 🚀 Empowering citizens with accessible, AI-driven information on their basic legal rights.
+# Run and deploy your AI Studio app
 
-This project is a conversational AI chatbot built to demystify legal information for the average citizen of India. Leveraging the advanced reasoning capabilities of the **Gemini 2.5 Pro API**, it aims to enhance legal literacy by providing clear, accessible, and understandable answers to questions about basic legal rights and procedures.
+This contains everything you need to run your app locally.
 
----
+View your app in AI Studio: https://ai.studio/apps/drive/19ArgK8tyAH0x1YWeBGyhJQ_M6Yg46g7J
 
-## 🎯 Project Objectives
+## Run Locally
 
-* **Educate:** To inform Indian citizens about their fundamental legal rights in simple, plain language.
-* **Simplify:** To break down complex legal jargon and procedures into easy-to-understand steps.
-* **Empower:** To provide users with the confidence and knowledge to navigate common legal situations.
+**Prerequisites:**  Node.js
 
-## ✨ Features
 
-* **Conversational AI:** Uses the Gemini 2.5 Pro API for natural, human-like dialogue.
-* **Broad Scope:** Covers a wide range of topics, from basic citizen rights to consumer protection.
-* **Simple Language:** Designed to be accessible to users with no prior legal knowledge.
-
-## 🛠️ Tech Stack
-
-* **Core Model:** Google Gemini 2.5 Pro
-* **Backend:** Node.js (Express.js)
-* **Frontend:** [e.g., HTML/CSS/JavaScript, React, EJS]
-* **Database:** [e.g., Supabase, Firebase, MongoDB]
-
-## Quick Start
-
-Instructions on how to run this project locally.
-
-```bash
-# 1. Clone the repository
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-cd your-repo-name
-
-# 2. Install dependencies
-# (This installs all packages from package.json)
-npm install
-
-# 3. Set up your environment variables
-# (Create a .env file and add your GEMINI_API_KEY)
-echo "GEMINI_API_KEY='YOUR_API_KEY_HERE'" > .env
-
-# 4. Run the application
-# (Assuming your main file is index.js or app.js)
-node index.js
-# or if you have a "start" script in your package.json:
-# npm start
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
