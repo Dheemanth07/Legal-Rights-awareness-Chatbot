@@ -3,6 +3,7 @@ import React from 'react';
 
 interface SpeakerIconProps extends React.SVGProps<SVGSVGElement> {
   state: 'idle' | 'loading' | 'playing' | 'error';
+  className?: string;
 }
 
 const SpeakerWaveIcon = (props: React.SVGProps<SVGSVGElement>) => (
