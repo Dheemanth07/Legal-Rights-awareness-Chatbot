@@ -1,9 +1,18 @@
+/// <reference types="vite/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_GEMINI_API_KEY: string
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
 
 import { GoogleGenAI, type Content, type Part, Modality } from "@google/genai";
 import { SYSTEM_INSTRUCTION } from '../constants';
 
 // Assume process.env.API_KEY is configured in the environment
-const API_KEY = process.env.API_KEY;
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 if (!API_KEY) {
   // In a real app, you'd want to handle this more gracefully.
