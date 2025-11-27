@@ -172,6 +172,7 @@ const App: React.FC = () => {
         <footer className="bg-gray-900/60 p-3 text-center text-xs text-gray-400 border-t border-gray-700/50">
           Disclaimer: This is an AI-powered tool for informational purposes only and does not constitute legal advice. Always consult a qualified legal professional.
         </footer>
+        <Analytics />
       </div>
     </>
   );
