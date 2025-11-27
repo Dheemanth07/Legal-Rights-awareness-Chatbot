@@ -8,6 +8,7 @@ import { LocationIcon } from './components/icons/LocationIcon';
 import { GeoLocateIcon } from './components/icons/GeoLocateIcon';
 import type { ChatMessage } from './types';
 import { MessageSender } from './types';
+import { Analytics } from "@vercel/analytics/react"
 
 const CHAT_HISTORY_KEY = 'legalChatHistory';
 const JURISDICTION_KEY = 'legalChatJurisdiction';
